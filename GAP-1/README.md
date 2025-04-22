@@ -5,6 +5,7 @@
 WordPress развёрнут по официальной документации Canonical
 https://ubuntu.com/tutorials/install-and-configure-wordpres
 ```
+![WordPress](https://raw.githubusercontent.com/Blackwerzen/otus_monitoring/refs/heads/main/GAP-1/pictures/pic02.PNG)
 
 
 ```
