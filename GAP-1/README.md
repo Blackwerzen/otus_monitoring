@@ -21,3 +21,4 @@ https://ubuntu.com/tutorials/install-and-configure-wordpres
 Конфигурационный файл расположен в каталоге configs
 Все экспортеры добавлены как таргеты для наблюдения
 ```
+![WordPress](https://raw.githubusercontent.com/Blackwerzen/otus_monitoring/refs/heads/main/GAP-1/pictures/pic01.PNG)
