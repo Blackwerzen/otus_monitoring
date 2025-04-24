@@ -2,6 +2,9 @@
 global:
   scrape_interval: 15s # Set the scrape interval to every 15 seconds. Default is every 1 minute.
   evaluation_interval: 15s # Evaluate rules every 15 seconds. The default is every 1 minute.
+  external_labels:
+    site: prod
+
   # scrape_timeout is set to the global default (10s).
 
 # Alertmanager configuration
@@ -25,13 +28,22 @@ scrape_configs:
     scrape_interval: 5s
     static_configs:
       - targets: ["192.168.136.132:9100"]
+        labels:
+          site: prod
 
   - job_name: "blackbox_exporter"
     scrape_interval: 5s
     static_configs:
       - targets: ["192.168.136.132:9115"]
+        labels:
+          site: prod
 
   - job_name: "mysqld_exporter"
     scrape_interval: 5s
     static_configs:
       - targets: ["192.168.136.132:9104"] 
+        labels:
+          site: prod
+      
+remote_write:
+  - url: http://192.168.136.133:8428/api/v1/write

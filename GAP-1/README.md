@@ -22,3 +22,24 @@ https://ubuntu.com/tutorials/install-and-configure-wordpres
 Все экспортеры добавлены как таргеты для наблюдения
 ```
 ![WordPress](https://raw.githubusercontent.com/Blackwerzen/otus_monitoring/refs/heads/main/GAP-1/pictures/pic01.PNG)
+
+# Отказоустойчивость Prometheus, хранилища метрик для Prometheus (Thanos, VictoriaMetrics, Mimir)
+
+```
+Развёрнута виртуальная машина под VictoriaMetrics на базе дистрибутива Ubuntu 22.04.
+Конфигурационный файл VictoriaMetrics расположен в каталоге configs
+Время хранения выставлено сроком на 14 дней
+``
+  -retentionPeriod 14d
+``
+Для лэйбла prod в конфигурацию Prometheus для каждого таргета добавлены:
+``
+  labels:
+    site: prod
+``
+Для передачи данных в VictoriaMetrics добавлен настройка remote_write:
+``
+remote_write:
+  - url: http://192.168.136.133:8428/api/v1/write
+``
+```
