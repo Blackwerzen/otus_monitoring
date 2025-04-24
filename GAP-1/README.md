@@ -38,7 +38,7 @@ https://ubuntu.com/tutorials/install-and-configure-wordpres
   labels:
     site: prod
 ```
-Для передачи данных в VictoriaMetrics добавлен настройка remote_write:
+Для передачи данных в VictoriaMetrics в конфигурацию Prometheus добавлена настройка remote_write:
 ```
 remote_write:
   - url: http://192.168.136.133:8428/api/v1/write
