@@ -43,3 +43,5 @@ https://ubuntu.com/tutorials/install-and-configure-wordpres
 remote_write:
   - url: http://192.168.136.133:8428/api/v1/write
 ```
+
+![VictoriaMetrics](https://raw.githubusercontent.com/Blackwerzen/otus_monitoring/refs/heads/main/GAP-1/pictures/pic03.PNG)
