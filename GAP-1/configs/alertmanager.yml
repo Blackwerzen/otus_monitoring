@@ -1,0 +1,37 @@
+route:
+  group_by: ['alertname']
+  group_wait: 5s
+  group_interval: 1m
+  repeat_interval: 1m
+  receiver: "default-receiver"
+  routes:
+  - receiver: "telegram"
+    group_wait: 5s
+    matchers:
+    - severity="critical"
+  - receiver: "email"
+    group_wait: 5s
+    matchers:
+    - secerity="warning"
+
+receivers:
+  - name: 'default-receiver'
+  - name: 'telegram'
+    telegram_configs:
+    - api_url: 'https://api.telegram.org'
+      bot_token: '6**********6:AAFD_*****************************BY'
+      chat_id: 6*********6
+      send_resolved: true
+      message: 'Allert from Alertmanager'
+  - name: 'email'
+    email_configs:
+    - to: your_email@gmail.com
+      from: from_email@gmail.com
+      # Your smtp server address
+      smarthost: smtp.gmail.com:587
+      auth_username: from_email@gmail.com
+      auth_identity: from_email@gmail.com
+      auth_password: 16letter_generated token
+      headers:
+        From: from_email@gmail.com
+        Subject: 'Demo ALERT'

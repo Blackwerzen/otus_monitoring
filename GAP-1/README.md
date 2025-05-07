@@ -45,3 +45,15 @@ remote_write:
 ```
 
 ![VictoriaMetrics](https://raw.githubusercontent.com/Blackwerzen/otus_monitoring/refs/heads/main/GAP-1/pictures/pic03.PNG)
+
+# Prometheus, Alertmanager - работа с метриками (PromQL), написание алертов и их ротация
+В конфигурацию Prometheus добавлен путь к файлу с алертами(файл с алертами приложен в директории configs/rules.yml)
+```
+rule_files:
+   - "rules.yml"
+  # - "second_rules.yml"
+```
+![VictoriaMetrics](https://raw.githubusercontent.com/Blackwerzen/otus_monitoring/refs/heads/main/GAP-1/pictures/pic04.PNG)
+
+На ВМ с Prometheus добавлен сервис Alertmanager(файлы сервиса и конфигурации расположены в директории configs/)
+![VictoriaMetrics](https://raw.githubusercontent.com/Blackwerzen/otus_monitoring/refs/heads/main/GAP-1/pictures/pic05.PNG)
